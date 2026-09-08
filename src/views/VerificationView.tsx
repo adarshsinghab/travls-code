@@ -3,7 +3,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
-  Sparkles,
   Zap,
 } from 'lucide-react';
 import type { VerificationTier } from '../types';
@@ -97,7 +96,7 @@ export const VerificationView: React.FC<VerificationViewProps> = ({
               boxShadow: '0 4px 14px rgba(255, 185, 31, 0.28)',
             }}
           >
-            <Sparkles size={16} />
+            <ShieldCheck size={16} />
             <span>Apply for Tier 3 Institutional</span>
           </button>
         </div>

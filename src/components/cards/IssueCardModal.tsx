@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Check, ShieldCheck, Sparkles, ArrowRight } from 'lucide-react';
+import { X, Check, ShieldCheck, CreditCard, ArrowRight } from 'lucide-react';
 import type { CardItem, CardType } from '../../types';
 
 interface IssueCardModalProps {
@@ -499,7 +499,7 @@ export const IssueCardModal: React.FC<IssueCardModalProps> = ({
                   <span>Generating Secure Keys...</span>
                 ) : (
                   <>
-                    <Sparkles size={16} />
+                    <CreditCard size={16} />
                     <span>Issue Card Now</span>
                   </>
                 )}

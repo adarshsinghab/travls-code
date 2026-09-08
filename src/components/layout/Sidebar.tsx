@@ -9,9 +9,7 @@ import {
   Settings,
   HelpCircle,
   LogOut,
-  Wifi,
   ChevronLeft,
-  ChevronRight,
 } from 'lucide-react';
 import type { NavTab } from '../../types';
 
@@ -336,133 +334,34 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
 
-      {/* Bottom Section: Network Status & Sign Out */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {/* Network & Node Status Card */}
-        {!isCollapsed ? (
-          <div
-            style={{
-              background: 'var(--surface-subtle)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: 'var(--radius-md)',
-              padding: '12px',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                marginBottom: '6px',
-              }}
-            >
-              <span style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: 600 }}>
-                NETWORK
-              </span>
-              <span
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  fontSize: '11px',
-                  color: 'var(--success)',
-                  fontWeight: 600,
-                }}
-              >
-                <span
-                  style={{
-                    width: '6px',
-                    height: '6px',
-                    borderRadius: '50%',
-                    background: 'var(--success)',
-                  }}
-                />
-                Mainnet Live
-              </span>
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Wifi size={12} color="var(--brand-primary)" />
-              <span>Multi-Chain Gateway</span>
-            </div>
-          </div>
-        ) : (
-          <div
-            title="Mainnet Live (Multi-Chain Gateway)"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '10px 0',
-              color: 'var(--success)',
-            }}
-          >
-            <Wifi size={18} />
-          </div>
-        )}
-
-        {/* Expand/Collapse Trigger at Bottom */}
-        <button
-          onClick={onToggleCollapse}
-          title={isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            padding: '9px 12px',
-            borderRadius: 'var(--radius-sm)',
-            background: 'var(--surface-subtle)',
-            border: '1px solid var(--border-subtle)',
-            color: 'var(--text-secondary)',
-            fontSize: '12px',
-            fontWeight: 600,
-            cursor: 'pointer',
-            transition: 'all var(--transition-fast)',
-            width: '100%',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = 'var(--text-primary)';
-            e.currentTarget.style.borderColor = 'var(--border-default)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = 'var(--text-secondary)';
-            e.currentTarget.style.borderColor = 'var(--border-subtle)';
-          }}
-        >
-          {isCollapsed ? <ChevronRight size={16} /> : (
-            <>
-              <ChevronLeft size={16} />
-              <span>Collapse Sidebar</span>
-            </>
-          )}
-        </button>
-
-        {/* Refined Sign Out Button */}
+      {/* Bottom Section: Clean Sign Out */}
+      <div style={{ marginTop: 'auto', paddingTop: '16px' }}>
         <button
           onClick={() => alert('Securely signing out of TRAVLS Banking session.')}
           title={isCollapsed ? 'Sign Out' : undefined}
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            gap: '8px',
-            padding: isCollapsed ? '10px 0' : '10px',
+            justifyContent: isCollapsed ? 'center' : 'flex-start',
+            gap: '10px',
+            padding: isCollapsed ? '10px 0' : '9px 12px',
             borderRadius: 'var(--radius-sm)',
-            background: 'rgba(239, 68, 68, 0.06)',
-            border: '1px solid rgba(239, 68, 68, 0.16)',
-            color: '#F87171',
+            background: 'transparent',
+            border: '1px solid transparent',
+            color: 'var(--text-muted)',
             fontSize: '13px',
-            fontWeight: 600,
-            transition: 'background var(--transition-fast), border-color var(--transition-fast)',
+            fontWeight: 500,
+            cursor: 'pointer',
+            transition: 'all var(--transition-fast)',
             width: '100%',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'rgba(239, 68, 68, 0.14)';
-            e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.35)';
+            e.currentTarget.style.color = '#EF4444';
+            e.currentTarget.style.background = 'rgba(239, 68, 68, 0.08)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'rgba(239, 68, 68, 0.06)';
-            e.currentTarget.style.borderColor = 'rgba(239, 68, 68, 0.16)';
+            e.currentTarget.style.color = 'var(--text-muted)';
+            e.currentTarget.style.background = 'transparent';
           }}
         >
           <LogOut size={16} />

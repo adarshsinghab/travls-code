@@ -4,7 +4,6 @@ import {
   ChevronDown,
   ChevronUp,
   Send,
-  Sparkles,
 } from 'lucide-react';
 
 interface HelpViewProps {
@@ -149,7 +148,7 @@ export const HelpView: React.FC<HelpViewProps> = ({ onNotify }) => {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <Sparkles size={20} color="var(--brand-primary)" />
+            <HelpCircle size={20} color="var(--brand-primary)" />
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-primary)' }}>
               Contact VIP Concierge Desk
             </h3>

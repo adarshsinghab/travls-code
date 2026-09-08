@@ -92,47 +92,8 @@
   --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Theme 2: Midnight Cyber (Deep Navy & Electric Cyan) */
-[data-theme="midnight"] {
-  --brand-primary: #00F2FE;
-  --brand-hover: #38BDF8;
-  --brand-active: #0284C7;
-  --brand-soft: rgba(0, 242, 254, 0.12);
-  --brand-soft-hover: rgba(0, 242, 254, 0.22);
-  --brand-border: rgba(0, 242, 254, 0.35);
-  --brand-border-glow: rgba(0, 242, 254, 0.65);
-  --brand-glow: 0 0 30px rgba(0, 242, 254, 0.3);
-  --brand-glow-strong: 0 0 45px rgba(0, 242, 254, 0.5);
 
-  --ice-primary: #00F2FE;
-  --ice-soft: rgba(0, 242, 254, 0.15);
-  --ice-border: rgba(0, 242, 254, 0.45);
-  --ice-glow: 0 0 25px rgba(0, 242, 254, 0.4);
-
-  --surface-canvas: #050811;
-  --surface-base: #080E1C;
-  --surface-card: rgba(13, 23, 44, 0.85);
-  --surface-card-solid: #0E172C;
-  --surface-elevated: rgba(18, 32, 60, 0.9);
-  --surface-elevated-solid: #12203C;
-  --surface-subtle: rgba(10, 18, 34, 0.65);
-  --surface-interactive: rgba(22, 38, 72, 0.7);
-  --surface-active: rgba(30, 52, 98, 0.85);
-  --surface-overlay: rgba(5, 8, 17, 0.88);
-
-  --border-subtle: rgba(0, 242, 254, 0.08);
-  --border-default: rgba(0, 242, 254, 0.16);
-  --border-highlight: rgba(0, 242, 254, 0.32);
-  --border-focus: #00F2FE;
-
-  --text-primary: #F0F9FF;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-disabled: #334155;
-  --text-inverse: #050811;
-}
-
-/* Theme 3: Executive Light (Pristine Titanium White / Platinum Slate) */
+/* Theme 2: Executive Light (Pristine Platinum White / Slate) */
 [data-theme="executive"] {
   --brand-primary: #D97706;
   --brand-hover: #B45309;

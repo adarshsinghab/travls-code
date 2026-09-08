@@ -6,7 +6,7 @@ import {
   ArrowUpRight,
   CreditCard,
   RefreshCw,
-  Sparkles,
+  Percent,
   ChevronRight,
 } from 'lucide-react';
 import type { Transaction } from '../types';
@@ -382,7 +382,7 @@ export const TransactionsView: React.FC<TransactionsViewProps> = ({
                       }}
                     >
                       {tx.type === 'card_spend' && <CreditCard size={18} color="var(--brand-primary)" />}
-                      {tx.type === 'cashback' && <Sparkles size={18} color="var(--brand-primary)" />}
+                      {tx.type === 'cashback' && <Percent size={18} color="var(--brand-primary)" />}
                       {tx.type === 'crypto_deposit' && <ArrowDownLeft size={18} />}
                       {tx.type === 'bank_transfer' && <ArrowUpRight size={18} />}
                       {tx.type === 'crypto_swap' && <RefreshCw size={18} color="var(--brand-primary)" />}

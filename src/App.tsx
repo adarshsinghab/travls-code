@@ -46,9 +46,10 @@ import './App.css';
 export default function App() {
   const [activeTab, setActiveTab] = useState<NavTab>('dashboard');
 
-  // Multi-Theme State (Obsidian Gold | Midnight Cyber | Executive Light)
-  const [theme, setTheme] = useState<'obsidian' | 'midnight' | 'executive'>(() => {
-    return (localStorage.getItem('travls-theme') as 'obsidian' | 'midnight' | 'executive') || 'obsidian';
+  // Dual Executive Theme State (Obsidian Dark | Executive Light)
+  const [theme, setTheme] = useState<'obsidian' | 'executive'>(() => {
+    const saved = localStorage.getItem('travls-theme');
+    return saved === 'executive' ? 'executive' : 'obsidian';
   });
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export default function App() {
     localStorage.setItem('travls-theme', theme);
   }, [theme]);
 
-  const handleSelectTheme = (newTheme: 'obsidian' | 'midnight' | 'executive') => {
+  const handleSelectTheme = (newTheme: 'obsidian' | 'executive') => {
     setTheme(newTheme);
   };
 
