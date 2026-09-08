@@ -1,0 +1,185 @@
+/* ==========================================================================
+   APP SHELL LAYOUT & RESPONSIVE RULES
+   ========================================================================== */
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Header and sidebar remain fixed; main viewport handles scrolling */
+  background-color: var(--surface-canvas);
+  position: relative;
+}
+
+/* Fixed & Collapsible Sidebar */
+.app-sidebar {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--surface-canvas);
+  border-right: 1px solid var(--border-subtle);
+  transition: width 0.28s cubic-bezier(0.16, 1, 0.3, 1), padding 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 50;
+}
+
+.app-sidebar.expanded {
+  width: 260px;
+  min-width: 260px;
+  padding: 24px 16px;
+}
+
+.app-sidebar.collapsed {
+  width: 74px;
+  min-width: 74px;
+  padding: 24px 10px;
+}
+
+.main-content-wrapper {
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevent flex children overflow */
+  overflow-y: auto; /* Pinned header stays fixed while content scrolls */
+  position: relative;
+}
+
+/* Pinned Sticky Header */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--surface-canvas);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.view-content-container {
+  flex: 1;
+  padding: 32px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Persistent Trust Strip from design ref */
+.trust-strip-container {
+  margin-top: 48px;
+  padding: 24px 32px;
+  background: var(--surface-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trust-strip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.trust-strip-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--brand-soft);
+  color: var(--brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trust-strip-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.trust-strip-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* Persistent Footer */
+.app-footer {
+  padding: 32px;
+  margin-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.app-footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.app-footer-links a:hover {
+  color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .trust-strip-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  aside {
+    display: none !important;
+  }
+
+  .mobile-only-btn {
+    display: flex !important;
+  }
+
+  .desktop-only-badge {
+    display: none !important;
+  }
+
+  .user-name-wrapper {
+    display: none !important;
+  }
+
+  .header-subtitle {
+    display: none !important;
+  }
+
+  .view-content-container {
+    padding: 16px;
+  }
+
+  .trust-strip-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .app-footer {
+    padding: 20px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
